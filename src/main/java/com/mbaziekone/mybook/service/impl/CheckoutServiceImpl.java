@@ -5,6 +5,8 @@ import com.mbaziekone.mybook.model.dto.PurchaseResponse;
 import com.mbaziekone.mybook.service.CheckoutService;
 
 public class CheckoutServiceImpl implements CheckoutService {
+	
+	
 
 	@Override
 	public PurchaseResponse placeOrder(Purchase purchase) {
