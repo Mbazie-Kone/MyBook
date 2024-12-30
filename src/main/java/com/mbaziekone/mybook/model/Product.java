@@ -2,9 +2,11 @@ package com.mbaziekone.mybook.model;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.Date;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -28,10 +30,19 @@ public class Product implements Serializable {
 	
 	private String description;
 	
+	@Column(name = "unit_price")
 	private BigDecimal unitPrice;
 	
 	private String imagePath;
 	
 	private boolean active;
+	
+	private int unitsInStock;
+	
+	private Date dateCreated;
+	
+	private Date lastUpdate;
+	
+	private ProductCategory category;
 
 }
