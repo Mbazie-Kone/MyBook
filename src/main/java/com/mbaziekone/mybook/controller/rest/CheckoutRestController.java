@@ -1,4 +1,4 @@
-package com.mbaziekone.mybook.controller;
+package com.mbaziekone.mybook.controller.rest;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,11 +13,11 @@ import com.mbaziekone.mybook.service.CheckoutService;
 @CrossOrigin("http://localhost:4200")
 @RestController
 @RequestMapping("/api/checkout")
-public class CheckoutControllerRest {
+public class CheckoutRestController {
 	
 	private CheckoutService checkoutService;
 	
-	public CheckoutControllerRest(CheckoutService checkoutService) {
+	public CheckoutRestController(CheckoutService checkoutService) {
 		this.checkoutService = checkoutService;
 	}
 	
