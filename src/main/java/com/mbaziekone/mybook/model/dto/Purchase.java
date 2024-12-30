@@ -1,6 +1,5 @@
 package com.mbaziekone.mybook.model.dto;
 
-
 import java.util.Set;
 
 import com.mbaziekone.mybook.model.Address;
