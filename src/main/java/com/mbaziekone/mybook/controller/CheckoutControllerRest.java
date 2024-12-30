@@ -17,7 +17,9 @@ public class CheckoutControllerRest {
 	
 	private CheckoutService checkoutService;
 	
-	public CheckoutControllerRest();
+	public CheckoutControllerRest(CheckoutService checkoutService) {
+		this.checkoutService = checkoutService;
+	}
 	
 	@PostMapping("/purchase")
 	public PurchaseResponse placeOrder(@RequestBody Purchase purchase) {
