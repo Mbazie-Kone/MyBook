@@ -1,6 +1,7 @@
 package com.mbaziekone.mybook.service.impl;
 
 import java.util.Set;
+import java.util.UUID;
 
 import org.hibernate.cache.spi.support.AbstractReadWriteAccess.Item;
 import org.springframework.stereotype.Service;
@@ -43,14 +44,20 @@ public class CheckoutServiceImpl implements CheckoutService {
 		order.setBillingAddress(purchase.getBillingAddress());
 		order.setShippingAddress(purchase.getShippingAddress());
 		
-		
+		// populate customer with order
 		Customer customer = purchase.getCustomer();
 		customer.add(order);
 		
-		
+		// save to the database
 		customerRepository.save(customer);
 		
-		return null;
+		// return a response
+		return new PurchaseResponse(orderTrackingNumber);
 	}
-
+	
+	private String generateOrderTrackingNumber() {
+		// generate a random UUID number (UUID version-4)
+		// for details see: https://en.wikipedia.org/wiki/Universally_unique_identifier
+		return UUID.randomUUID().toString();
+	}
 }
