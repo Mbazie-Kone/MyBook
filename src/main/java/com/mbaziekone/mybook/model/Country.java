@@ -13,11 +13,13 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 @Entity
 @Table(name = "countries")
 @Getter
 @Setter
+@ToString
 public class Country implements Serializable{
 
 	private static final long serialVersionUID = 1L;
