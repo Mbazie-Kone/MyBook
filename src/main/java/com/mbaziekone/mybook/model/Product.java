@@ -1,6 +1,7 @@
 package com.mbaziekone.mybook.model;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -20,5 +21,17 @@ public class Product implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@JsonProperty("id")
 	private Long id;
+	
+	private String sku;
+	
+	private String name;
+	
+	private String description;
+	
+	private BigDecimal unitPrice;
+	
+	private String imagePath;
+	
+	private boolean active;
 
 }
