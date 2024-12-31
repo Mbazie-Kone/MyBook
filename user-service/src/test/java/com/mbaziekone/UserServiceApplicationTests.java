@@ -1,10 +1,10 @@
-package com.mbaziekone.mybook;
+package com.mbaziekone;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class MyBookApplicationTests {
+class UserServiceApplicationTests {
 
 	@Test
 	void contextLoads() {
