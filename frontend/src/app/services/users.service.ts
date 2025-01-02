@@ -8,7 +8,7 @@ import { User } from '../interfaces/user';
 })
 export class UsersService {
 
-  private apiUrl = '/api/users';
+  private apiUrl = '/api/users'; // Proxy config
 
   constructor(private http: HttpClient) { }
 
