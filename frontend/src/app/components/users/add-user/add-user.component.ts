@@ -15,13 +15,16 @@ export class AddUserComponent {
   constructor(private userService: UsersService) {}
 
   saveUser(): void {
-    this.userService.createUser(this.user).subscribe(
-      (response) => {
-        console.log('User saved successfully', response);
+    this.userService.createUser(this.user).subscribe({
+      next: (response) => {
+        console.log('User saved successfully:', response);
       },
-      (error) => {
+    error: (error) => {
         console.error('Error saving user:', error);
-      }
-    );
+      },
+    complete: () => {
+      console.log('Request completed');
+    },
+  });
   }
 }
