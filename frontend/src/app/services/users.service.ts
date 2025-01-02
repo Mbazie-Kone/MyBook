@@ -16,4 +16,10 @@ export class UsersService {
 
     return this.http.get<User[]>(this.apiUrl);
   }
+
+  // Add users in DB
+  createUser(user: User): Observable<User> {
+
+    return this.http.post<User>(this.apiUrl, user);
+  }
 }
