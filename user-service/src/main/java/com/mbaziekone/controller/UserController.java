@@ -2,22 +2,30 @@ package com.mbaziekone.controller;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.mbaziekone.model.User;
+import com.mbaziekone.service.UserService;
 
 @RestController
 @RequestMapping("/api/users")
 public class UserController {
 	
+	@Autowired
+	private UserService userService;
+	
 	@GetMapping
 	public List<User> getAllUsers() {
 		
-		return List.of(
-			new User(1,"Mario"),
-			new User(2, "Maria")
-		);
+		return userService.getAllUsers();
+	}
+	
+	@PostMapping("/add")
+	public void saveUser(User user) {
+		
 	}
 }
