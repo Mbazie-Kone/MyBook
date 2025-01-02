@@ -10,7 +10,7 @@ import { UsersService } from '../../../services/users.service';
   styleUrl: './add-user.component.css'
 })
 export class AddUserComponent {
-  user: User = {id: 0, name: ''};
+  user: User = {name: ''};
 
   constructor(private userService: UsersService) {}
 
